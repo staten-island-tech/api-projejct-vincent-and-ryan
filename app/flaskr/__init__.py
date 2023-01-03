@@ -1,6 +1,9 @@
 import os
 
 from flask import Flask
+import json
+## Open the JSON file of pokemon data
+pokedex = open("./pokedex.json", encoding="utf8")
 
 
 def create_app(test_config=None):
