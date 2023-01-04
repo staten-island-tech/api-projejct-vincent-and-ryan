@@ -1,6 +1,9 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template 
+import json
+## Open the JSON file of pokemon data
+
 
 
 def create_app(test_config=None):
@@ -24,9 +27,12 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    pokedex = open("./pokedex.json", encoding="utf8")
+    data = json.load(pokedex)
+
     # a simple page that says hello
     @app.route('/')
     def hello():
-        return 'Hello, World!'
+        return render_template('Hello, World!', data=data)
 
     return app
