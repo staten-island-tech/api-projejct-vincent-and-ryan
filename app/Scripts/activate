@@ -38,7 +38,11 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
+VIRTUAL_ENV="C:\Users\vincent.lin\Documents\GitHub\api-projejct-vincent-and-ryan\app"
+=======
 VIRTUAL_ENV="C:\Users\ryan.chen1\Documents\GitHub\api-projejct-vincent-and-ryan\app"
+>>>>>>> f2fb740ec8f41a87fb2991119eaf239fcaf6af67
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
