@@ -27,13 +27,6 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    def read_json_file(filepath):
-        with open(filepath, "r") as f:
-            return json.load(f)
-    
-    def main():
-        data = read_json_file ("data.json")
-
     # a simple page that says hello
     @app.route('/')
     def hello():
