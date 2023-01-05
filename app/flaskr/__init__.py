@@ -28,6 +28,7 @@ def create_app(test_config=None):
         pass
 
     pokedex = open("./pokedex.json", encoding="utf8")
+    
     data = json.load(pokedex)
 
     # a simple page that says hello
