@@ -30,12 +30,8 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/')
     def hello():
-        def read_json_file(filepath):
-            with open(filepath, "r") as f:
-                return json.load(f)
-    
-        def main():
-            data = read_json_file ("data.json")
-            return render_template('index.html', data=data)
+            return render_template('index.html')                                                                                                          
+
+
 
     return app
