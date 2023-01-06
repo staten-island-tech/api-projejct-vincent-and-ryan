@@ -2,9 +2,11 @@ import os
 
 from flask import Flask, render_template 
 import json
+import requests
 ## Open the JSON file of pokemon data
 
-
+r = requests.get("https://pokeapi.co/api/v2/pokemon/charmander").json()
+print(r)
 
 def create_app(test_config=None):
     # create and configure the app
@@ -30,12 +32,19 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/')
     def hello():
-        def read_json_file(filepath):
-            with open(filepath, "r") as f:
-                return json.load(f)
+        return render_template('index.html')
     
-        def main():
-            data = read_json_file ("data.json")
-            return render_template('index.html', data=data)
+    
+    @app.route('/', methods=('GET', 'POST'))
+    def getPost():
+        if request.method == 'POST':
+            title = request.form['title']
+            body = request.form['body']
+            data = requests.get(f"https://pokeapi.co/api/v2/pokemon/{title}").json()
+
+            print(request.form)
+            return render_template('test.html',data=data)
+        else:
+            return render_template('index.html')
 
     return app
