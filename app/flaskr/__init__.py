@@ -27,12 +27,11 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    pokedex = open("./pokedex.json", encoding="utf8")
-    data = json.load(pokedex)
-
     # a simple page that says hello
     @app.route('/')
     def hello():
-        return 'Hello, World!'
+            return render_template('index.html')                                                                                                          
+
+
 
     return app
