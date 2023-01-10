@@ -1,13 +1,8 @@
+from flask import Flask, render_template, request
 import os
-from urllib import request
-
-from flask import Flask, render_template 
-import json
 import requests
-## Open the JSON file of pokemon data
+import json
 
-r = requests.get("https://pokeapi.co/api/v2/pokemon/charmander").json()
-print(r)
 
 def create_app(test_config=None):
     # create and configure the app
@@ -30,22 +25,20 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    @app.route('/')
-    def hello():
-        return render_template('index.html')
+
     
-    
+    """ @app.route("/")
+    def index():
+        return render_template('index.html') """
+
     @app.route('/', methods=('GET', 'POST'))
     def getPost():
         if request.method == 'POST':
             title = request.form['title']
             body = request.form['body']
             data = requests.get(f"https://pokeapi.co/api/v2/pokemon/{title}").json()
-
-            print(request.form)
-            return render_template('test.html',data=data)
+            print(request.headers)
+            return render_template('pokemon.html',data=data)
         else:
             return render_template('index.html')
-
     return app
