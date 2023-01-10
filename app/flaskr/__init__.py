@@ -6,8 +6,9 @@ import json
 import requests
 ## Open the JSON file of pokemon data
 
+
 r = requests.get("https://pokeapi.co/api/v2/pokemon/charmander").json()
-print(r)
+
 
 def create_app(test_config=None):
     # create and configure the app
