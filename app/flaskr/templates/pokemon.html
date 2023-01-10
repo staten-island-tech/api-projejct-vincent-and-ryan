@@ -10,5 +10,13 @@
     {% for type in data.types %}
     <h3>{{type.type.name}}</h3>
     {% endfor %}
+    {% for ability in data.abilities %}
+    <h3>{{ability.ability.name}}</h3>
+    {% endfor %}
+    {% for stats in data.base_stat %}
+    <h3>{{stats.base_stat.name}}</h3>
+    {% endfor %}
+
+
   </body>
 </html>
