@@ -168,3 +168,8 @@ cython_debug/
 #.idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/flask
+app/Scripts/pip3.exe
+*.exe
+app/Scripts/activate
+*.bat
+app/Scripts/activate.bat
