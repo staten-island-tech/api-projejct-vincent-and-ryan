@@ -13,9 +13,14 @@
     {% for ability in data.abilities %}
     <h3>{{ability.ability.name}}</h3>
     {% endfor %}
-    {% for stats in data.base_stat %}
-    <h3>{{stats.base_stat.name}}</h3>
+    {% for base_stat in data.stats %}
+    <h3><span>{{base_stat.stat.name}}</span>
+    <span>{{base_stat.base_stat}}</span>
+      
+    </h3>
     {% endfor %}
+  
+
 
 
   </body>
