@@ -7,16 +7,15 @@
   </head>
   <body>
     <form method="post">
-      <label for="title">Search Pokemon</label>
+      <label  for="title">Search Pokemon</label>
       <input
+        style="width: 300px; height: 150px"
         name="title"
         id="title"
         value="{{ request.form['title'] }}"
         required
       />
-      <label for="body">Body</label>
-      <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
-      <input type="submit" value="Save" />
     </form>
+  </div>
   </body>
 </html>
