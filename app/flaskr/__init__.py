@@ -27,17 +27,16 @@ def create_app(test_config=None):
 
 
     
-    """ @app.route("/")
-    def index():
-        return render_template('index.html') """
-
     @app.route('/', methods=('GET', 'POST'))
     def getPost():
         if request.method == 'POST':
             title = request.form['title']
+            body = request.form['bodies']
             data = requests.get(f"https://pokeapi.co/api/v2/pokemon/{title}").json()
-            print(request.headers)
             return render_template('pokemon.html',data=data)
         else:
             return render_template('index.html')
+            
+
+    
     return app
