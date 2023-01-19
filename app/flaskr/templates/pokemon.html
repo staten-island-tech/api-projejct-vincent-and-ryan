@@ -1,0 +1,25 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>{{data.name}}</h1>
+    {% for type in data.types %}
+    <h3>{{type.type.name}}</h3>
+    {% endfor %}
+    {% for ability in data.abilities %}
+    <h3>{{ability.ability.name}}</h3>
+    {% endfor %}
+    {% for base_stat in data.stats %}
+    <h3><span>{{base_stat.stat.name}} -</span>
+      <div><span >{{base_stat.base_stat}}</span></div>
+    {% endfor %}
+  
+
+
+
+  </body>
+</html>
